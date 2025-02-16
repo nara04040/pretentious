@@ -34,13 +34,13 @@ const ChallengeCard = ({ challenge }: ChallengeCardProps) => {
       tabIndex={0}
       aria-label={`${challenge.title} challenge`}
     >
-      <div className="relative h-48 w-full overflow-hidden bg-gray-100 dark:bg-gray-700">
+      <div className="relative h-52 w-full overflow-hidden bg-gray-100 dark:bg-gray-700">
         {!imageError ? (
           <Image
             src={challenge.image}
             alt={challenge.title}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-contain transition-transform duration-300 group-hover:scale-105"
             onError={handleImageError}
           />
         ) : (
