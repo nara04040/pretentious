@@ -12,14 +12,14 @@ export const challenges: Challenge[] = [
     path: '/challenges/profile-card',
   },
   {
-    id: 'add-to-bag',
+    id: 'product-detail',
     title: '제품 상세페이지 (장바구니)',
     day: 2,
     description: '사이즈 선택 및 카트 기능이 있는 제품 상세 페이지 구현하기',
-    image: '/challenges/add-to-bag.png',
+    image: '/challenges/product-detail.png',
     isCompleted: false,
     difficulty: 'medium',
-    path: '/challenges/add-to-bag',
+    path: '/challenges/product-detail',
   },
   {
     id: 'mobile-navigation',

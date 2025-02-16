@@ -1,6 +1,8 @@
 import { Challenge } from '@/types/challenge';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import PlaceholderImage from './PlaceholderImage';
 
 interface ChallengeCardProps {
   challenge: Challenge;
@@ -18,7 +20,12 @@ const getDifficultyColor = (difficulty: Challenge['difficulty']) => {
 };
 
 const ChallengeCard = ({ challenge }: ChallengeCardProps) => {
+  const [imageError, setImageError] = useState(false);
   const difficultyColor = getDifficultyColor(challenge.difficulty);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
   return (
     <Link
@@ -28,12 +35,21 @@ const ChallengeCard = ({ challenge }: ChallengeCardProps) => {
       aria-label={`${challenge.title} challenge`}
     >
       <div className="relative h-48 w-full overflow-hidden bg-gray-100 dark:bg-gray-700">
-        {/* <Image
-          src={challenge.image}
-          alt={challenge.title}
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-        /> */}
+        {!imageError ? (
+          <Image
+            src={challenge.image}
+            alt={challenge.title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            onError={handleImageError}
+          />
+        ) : (
+          <PlaceholderImage 
+            title={challenge.title}
+            initialSize="lg"
+            className="group-hover:bg-gradient-to-br-accent"
+          />
+        )}
         <div className="absolute right-2 top-2">
           <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${difficultyColor}`}>
             {challenge.difficulty}

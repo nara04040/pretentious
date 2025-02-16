@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import ProfileCard from '@/components/ProfileCard';
 import ChallengeContent from '@/components/ChallengeContent';
+import RevisionList from '@/components/RevisionList';
+import { revisions } from '@/lib/revisions';
 
 export default function ProfileCardPage() {
   const profileData = {
@@ -110,7 +112,7 @@ interface ProfileCardProps {
   avatar: string;
   socialLinks: SocialLink[];
 }`,
-            explanation: '타입스크립트를 사용하여 컴포넌트의 props와 소셜 링크의 구조를 명확하게 정의했습니다.',
+            explanation: '타입스크립트를 사용하여 컴포넌트의 props와 소셜 링크의 구조를 정의.\nProfileCard에 필요한 이름, 직업, 간단한 자기소개, 사진, links 들을 props로 받아오게 설계했습니다.',
           },
           {
             title: '이미지 처리',
@@ -174,7 +176,7 @@ interface ProfileCardProps {
                 d="M15 19l-7-7 7-7"
               />
             </svg>
-            챌린지로 돌아가기
+            챌린지 목록으로 돌아가기
           </Link>
         </div>
 
@@ -188,6 +190,8 @@ interface ProfileCardProps {
         <div className="flex justify-center">
           <ProfileCard {...profileData} />
         </div>
+
+        <RevisionList revisions={revisions} componentId="profile-card" />
 
         <ChallengeContent {...challengeContent} />
       </div>
