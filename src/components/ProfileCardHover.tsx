@@ -61,7 +61,7 @@ const ProfileCardHover = ({ name, role, bio, avatar, socialLinks }: ProfileCardP
                 </div>
               </div>
               {/* Ripple Effect */}
-              <div className="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-current opacity-0 group-hover:animate-ripple" />
+              <div className="absolute left-1 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-current opacity-0 group-hover:animate-ripple" />
             </div>
           ))}
         </div>

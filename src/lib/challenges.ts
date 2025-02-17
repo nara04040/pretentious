@@ -22,14 +22,14 @@ export const challenges: Challenge[] = [
     path: '/challenges/product-detail',
   },
   {
-    id: 'mobile-navigation',
+    id: 'side-navigation',
     title: '모바일 사이드 네비게이션',
     day: 3,
     description: '접근성 기능이 포함된 애니메이션 모바일 사이드 메뉴',
-    image: '/challenges/mobile-navigation.png',
+    image: '/challenges/side-navigation.png',
     isCompleted: false,
     difficulty: 'medium',
-    path: '/challenges/mobile-navigation',
+    path: '/challenges/side-navigation',
   },
   {
     id: 'contact-us',
