@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 import { SideNavigationSwipe } from '@/components/SideNavigationSwipe';
-import RevisionList from '@/components/RevisionList';
 import ChallengeContent from '@/components/ChallengeContent';
 import Link from 'next/link';
-import { revisions } from '@/lib/revisions';
 
 export const metadata: Metadata = {
   title: 'Side Navigation - Swipe Gesture | UI Challenges',
